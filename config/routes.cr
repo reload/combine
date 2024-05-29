@@ -32,6 +32,7 @@ Amber::Server.configure do
   end
 
   routes :api do
+    get "/api/v1/entries", LegacyEntityController, :index
   end
 
   routes :static do

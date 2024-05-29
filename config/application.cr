@@ -24,3 +24,5 @@ require "../src/models/**"
 require "../src/controllers/application_controller"
 require "../src/controllers/**"
 require "./routes"
+
+require "../src/responses/**"
