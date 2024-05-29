@@ -1,4 +1,4 @@
-# combine
+# Combine (harvester)
 
 [![Amber Framework](https://img.shields.io/badge/using-amber_framework-orange.svg)](https://amberframework.org)
 
