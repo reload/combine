@@ -1,0 +1,41 @@
+<h2>Users</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Working hours per day</th>
+      <th>Billability percent goal</th>
+      <th>Active</th>
+      <th>Admin</th>
+      <th>Contractor</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% users.each do |user| %>
+    <tr>
+      <td><%= "#{user.first_name} #{user.last_name}" %>
+      <td><%= user.email %>
+      <td>
+        <% if user.working_hours > 0 %>
+        <%= user.working_hours %>
+        <% else %>
+        <em>7.5</em>
+        <% end %>
+      <td>
+        <% if user.billability_goal > 0 %>
+        <%= user.billability_goal %>
+        <% else %>
+        <em>75</em>
+        <% end %>
+      <td><%= user.is_active ? "Yes" : "No" %>
+      <td><%= user.is_admin ? "Yes" : "No" %>
+      <td><%= user.is_contractor ? "Yes" : "No" %>
+      <td><%= link_to "Edit", "/admin/#{user.id}/edit" %>
+    </tr>
+    <% end %>
+
+  </tbody>
+</table>

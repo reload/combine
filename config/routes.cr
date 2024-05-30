@@ -29,6 +29,8 @@ Amber::Server.configure do
 
   routes :web do
     get "/", HomeController, :index
+    # Currently there's only a user admin.
+    resources "/admin", UserController, only: [:index, :edit, :update]
   end
 
   routes :api do
