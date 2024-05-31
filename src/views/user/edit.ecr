@@ -1,0 +1,42 @@
+<h1>Edit <%= user.first_name %></h1>
+
+<%- if user.errors %>
+  <ul class="errors">
+  <%- user.errors.each do |error| %>
+    <li><%= error.to_s %></li>
+  <%- end %>
+  </ul>
+<%- end %>
+
+<form action=<%= "/user/#{user.id}" %> method=post>
+  <%= csrf_tag %>
+  <input type="hidden" name="_method" value="patch" />
+
+  <div class=form-element>
+    <label>
+      Working hours
+      <%= text_field(
+          "working_hours",
+          placeholder: "Eg. 7.5",
+          value: user.working_hours.positive? ? user.working_hours.to_s : ""
+          ) %>
+    </label>
+    <small>If not set, 7.5 is used per default.</small>
+  </div>
+
+  <div class=form-element>
+    <label>
+      Billable percent goal
+      <%= text_field(
+          "billability_goal",
+          placeholder: "Eg. 75",
+          value: user.billability_goal.positive? ? user.billability_goal.to_s : ""
+          ) %>
+    </label>
+    <small>If not set, 75 percent is used per default.</small>
+  </div>
+
+  <div class=form-element>
+    <%= submit("Update") %>
+  </div>
+</form>

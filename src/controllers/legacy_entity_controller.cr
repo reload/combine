@@ -11,7 +11,7 @@ class LegacyEntityController < Amber::Controller::Base
     if params[:token]?
       token = params[:token].split("|")
       if token.size == 2
-        token_user = User.find_by(password: token[0], email: token[1])
+        token_user = User.find_by(hashed_password: token[0], email: token[1])
       end
     end
 

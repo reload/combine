@@ -33,7 +33,7 @@
       <td><%= user.is_active ? "Yes" : "No" %>
       <td><%= user.is_admin ? "Yes" : "No" %>
       <td><%= user.is_contractor ? "Yes" : "No" %>
-      <td><%= link_to "Edit", "/admin/#{user.id}/edit" %>
+      <td><%= link_to "Edit", "/user/#{user.id}/edit" %>
     </tr>
     <% end %>
 
