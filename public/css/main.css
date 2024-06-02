@@ -5,3 +5,25 @@
 .bg-primary {
   background-color: #f4994b !important
 }
+
+.alert {
+  border: var(--pico-border-width) solid var(--pico-muted-border-color);
+  background-color: var(--pico-muted-border-color);
+  border-radius: var(--pico-border-radius);
+  padding: var(--pico-form-element-spacing-vertical) var(--pico-form-element-spacing-horizontal);
+
+}
+
+.alert + .alert {
+  margin-top: var(--pico-form-element-spacing-vertical);
+}
+
+.alert-success {
+  border-color: var(--pico-form-element-valid-border-color);
+  background-color: var(--pico-form-element-valid-border-color);
+}
+
+.alert-danger {
+  border-color: var(--pico-form-element-invalid-active-border-color);
+  background-color: var(--pico-form-element-invalid-active-border-color);
+}
