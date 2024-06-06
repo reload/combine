@@ -18,6 +18,12 @@ class User < Granite::Base
   column created_at : Time
   column updated_at : Time
 
+  def self.last_updated_at
+    query "SELECT MAX(updated_at) FROM #{quoted_table_name}" { |rs|
+      rs.move_next
+      rs.read(Time?)}
+  end
+
   def password=(password)
     @new_password = password
     @hashed_password = Bcrypt::Password.create(password, cost: 10).to_s

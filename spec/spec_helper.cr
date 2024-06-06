@@ -5,6 +5,9 @@ require "micrate"
 
 require "../config/application"
 
-# Micrate::DB.connection_url = ENV["DATABASE_URL"]? || Amber.settings.database_url
+# Disable logging in tests.
+Log.builder.clear
+
+Micrate::DB.connection_url = ENV["DATABASE_URL"]? || Amber.settings.database_url
 # Automatically run migrations on the test database
-# Micrate::Cli.run_up
+Micrate::Cli.run_up
