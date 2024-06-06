@@ -40,6 +40,13 @@ dependencies:
     github: dare892/citrine-i18n
     version: ~> 1.0.0
 
+  harvest:
+    github: xendk/harvest.cr
+    version: ~> 0.2.0
+
+  cron_scheduler:
+    github: kostya/cron_scheduler
+
 development_dependencies:
   ameba:
     github: crystal-ameba/ameba

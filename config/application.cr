@@ -27,3 +27,8 @@ require "../src/controllers/**"
 require "./routes"
 
 require "../src/responses/**"
+
+# Background syncing job.
+require "harvest"
+require "cron_scheduler"
+require "../src/sync"

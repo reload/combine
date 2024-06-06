@@ -32,6 +32,14 @@ shards:
     git: https://github.com/elorest/compiled_license.git
     version: 1.2.2
 
+  cron_parser:
+    git: https://github.com/kostya/cron_parser.git
+    version: 0.4.0
+
+  cron_scheduler:
+    git: https://github.com/kostya/cron_scheduler.git
+    version: 0.4.0
+
   db:
     git: https://github.com/crystal-lang/crystal-db.git
     version: 0.11.0
@@ -51,6 +59,10 @@ shards:
   granite:
     git: https://github.com/amberframework/granite.git
     version: 0.23.3
+
+  harvest:
+    git: https://github.com/xendk/harvest.cr.git
+    version: 0.2.0
 
   i18n:
     git: https://github.com/dare892/i18n.cr.git
