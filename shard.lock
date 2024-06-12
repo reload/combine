@@ -62,7 +62,7 @@ shards:
 
   harvest:
     git: https://github.com/xendk/harvest.cr.git
-    version: 0.2.0
+    version: 0.3.1
 
   i18n:
     git: https://github.com/dare892/i18n.cr.git

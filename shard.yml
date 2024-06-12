@@ -42,7 +42,7 @@ dependencies:
 
   harvest:
     github: xendk/harvest.cr
-    version: ~> 0.2.0
+    version: ~> 0.2
 
   cron_scheduler:
     github: kostya/cron_scheduler
