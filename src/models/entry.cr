@@ -24,6 +24,12 @@ class Entry < Granite::Base
       rs.read(Time?)}
   end
 
+  # Get time entries between dates.
+  def self.spent_between(from : Time, to : Time)
+    where("spent_at >= ?", from.to_s("%F"))
+      .where("spent_at <= ?", to.to_s("%F"))
+  end
+
   # Override Granites created_at/updated_at handling.
   def set_timestamps(*, to time = Time.local(Granite.settings.default_timezone), mode = :create) end
 end
