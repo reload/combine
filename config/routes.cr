@@ -38,6 +38,7 @@ Amber::Server.configure do
 
   routes :web do
     get "/", HomeController, :index
+    get "/kaboom", HomeController, :kaboom
 
     get "/signin", SessionController, :new
     post "/session", SessionController, :create
