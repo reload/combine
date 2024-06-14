@@ -16,16 +16,16 @@ RUN shards build --release --production --static --no-debug combine
 RUN rm -rf lib db/*.db
 RUN mkdir storage && chown 1000:1000 storage
 
-FROM scratch
+# FROM scratch
 # Don't run as root. This is the core user on delta.
 USER 1000:1000
 # Copy only the app from the build stage.
-COPY --from=builder /build /
+# COPY --from=builder /build /
 # Install a CA store.
-COPY --from=builder /etc/ssl/cert.pem /etc/ssl/
+# COPY --from=builder /etc/ssl/cert.pem /etc/ssl/
 VOLUME /storage
 
 EXPOSE 80
 
 ENV AMBER_ENV=production
-ENTRYPOINT ["/bin/combine"]
+ENTRYPOINT ["/build/bin/combine"]
