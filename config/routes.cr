@@ -6,6 +6,7 @@ Amber::Server.configure do
     # plug Amber::Pipe::ClientIp.new(["X-Forwarded-For"])
     plug Citrine::I18n::Handler.new
     plug Amber::Pipe::Error.new
+    plug Raven::Amber::Pipe::Error.new
     plug Amber::Pipe::Logger.new
     plug Amber::Pipe::Session.new
     plug Amber::Pipe::Flash.new
@@ -21,6 +22,7 @@ Amber::Server.configure do
   pipeline :api do
     # plug Amber::Pipe::PoweredByAmber.new
     plug Amber::Pipe::Error.new
+    plug Raven::Amber::Pipe::Error.new
     plug Amber::Pipe::Logger.new
     plug Amber::Pipe::Session.new
     plug Amber::Pipe::CORS.new
@@ -30,6 +32,7 @@ Amber::Server.configure do
   pipeline :static do
     # plug Amber::Pipe::PoweredByAmber.new
     plug Amber::Pipe::Error.new
+    plug Raven::Amber::Pipe::Error.new
     plug Amber::Pipe::Static.new("./public")
   end
 
