@@ -25,6 +25,10 @@ the project you'll need the key from 1Password:
 
 `op read op://Shared/rasikyplntusmmbszukvobmjz4/password >.encryption_key`
 
+## Changelog
+
+The [changelog](CHANGELOG.md) records the latest changes.
+
 ## Development
 
 To start your Amber server:
