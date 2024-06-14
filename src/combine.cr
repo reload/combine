@@ -1,5 +1,8 @@
 require "../config/application"
 
+Micrate::DB.connection_url = Amber.settings.database_url
+Micrate::Cli.run_up
+
 def sync
   harvest = Harvest.new(
     Amber.settings.secrets["harvest_account_id"],

@@ -32,3 +32,6 @@ require "../src/responses/**"
 require "harvest"
 require "cron_scheduler"
 require "../src/sync"
+
+# For migrating database.
+require "micrate"
