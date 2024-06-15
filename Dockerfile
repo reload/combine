@@ -23,6 +23,7 @@ USER 1000:1000
 COPY --from=builder /build /
 # Install a CA store.
 COPY --from=builder /etc/ssl/cert.pem /etc/ssl/
+COPY --from=builder /usr/share/zoneinfo/Europe/Copenhagen /usr/share/zoneinfo/Europe/
 VOLUME /storage
 
 EXPOSE 80
