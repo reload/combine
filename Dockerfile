@@ -11,8 +11,9 @@ COPY src/ src/
 COPY config/ config/
 COPY db/ db/
 COPY public/ public/
-# Build a static binary.
-RUN shards build --release --production --static --no-debug combine
+# Build a static binary. We're not removing debugging information as
+# raven.cr uses it to create a backtrace.
+RUN shards build --release --production --static combine
 RUN rm -rf lib db/*.db
 RUN mkdir storage && chown 1000:1000 storage
 
