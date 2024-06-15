@@ -24,7 +24,7 @@ end
 # Run cron tasks in the master process.
 if Amber::Cluster.master?
   CronScheduler.define do
-    at("5 * * * *") { sync }
+    at("*/5 * * * *") { sync }
     at("0 1 * * *") { cleanup }
   end
 end
