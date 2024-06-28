@@ -17,7 +17,7 @@ RUN shards build --release --production --static combine
 RUN rm -rf lib db/*.db
 RUN mkdir storage && chown 1000:1000 storage
 
-FROM scratch
+FROM alpine:3
 # Don't run as root. This is the core user on delta.
 USER 1000:1000
 # Copy only the app from the build stage.
