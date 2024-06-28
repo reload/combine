@@ -25,10 +25,8 @@ module Responses
     # Cache of tasks.
     #
     # Granite doesn't cache relations, so we use a cache.
-    @[JSON::Field(ignore: true)]
-    @tasks = {} of Int64 => Task
-    @[JSON::Field(ignore: true)]
-    @projects = {} of Int64 => Project
+    @@tasks = {} of Int64 => Task
+    @@projects = {} of Int64 => Project
 
     def initialize(
          user : User,
@@ -102,10 +100,10 @@ module Responses
     end
 
     def process_entry(entry : Entry)
-      @tasks[entry.task_id!] ||= entry.task
-      task = @tasks[entry.task_id!]
-      @projects[entry.project_id!] ||= entry.project
-      project = @projects[entry.project_id!]
+      @@tasks[entry.task_id!] ||= entry.task
+      task = @@tasks[entry.task_id!]
+      @@projects[entry.project_id!] ||= entry.project
+      project = @@projects[entry.project_id!]
 
       # Off hours doesn't count towards working hours.
       if task.name == "Off Hours - Driftsupport (ReOps)"

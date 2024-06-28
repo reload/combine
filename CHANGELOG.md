@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## 1.0.1 - [Unreleased]
 
+### Fixed
+- Better caching of objects.
+
 ## [1.0.0] - 2024-06-28
 
 ### Added

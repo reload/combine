@@ -72,7 +72,7 @@ class LegacyEntityController < Amber::Controller::Base
     users = [] of Responses::UserTimeSummary
     user_entries.each do |user_id, entries|
       users << Responses::UserTimeSummary.new(
-        User.find(user_id).not_nil!,
+        user_cache[user_id],
         entries,
         work_days,
         7.5, # Hardcoded for the moment being.
