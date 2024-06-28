@@ -6,10 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
 
-## [Unreleased]
+## 1.0.1 - [Unreleased]
+
+## [1.0.0] - 2024-06-28
 
 ### Added
 - Initial version, with syncing, and the legacy endpoint.
 
 <!-- links -->
-[0.0.1]: https://github.com/reload/combine/compare/ve51dbae5b81d5483caf2ce14371fc3c3b5163ee2...HEAD
+[Unreleased]: https://github.com/reload/combine.git/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/reload/combine.git/releases/tag/v1.0.0
