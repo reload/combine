@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ### Fixed
 - Better caching of objects.
+- Added index on spent_at.
 
 ## [1.0.0] - 2024-06-28
 
