@@ -1,4 +1,4 @@
-FROM crystallang/crystal:1.11.2-alpine as builder
+FROM crystallang/crystal:1.11.2-alpine AS builder
 RUN mkdir /build
 WORKDIR /build
 # Add build dependencies.
