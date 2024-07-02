@@ -10,10 +10,15 @@ module Responses
     # Hours registered.
     @[JSON::Field(ignore: true)]
     getter hours : Float64 = 0
+    # Hours registered, rounded to 15 minutes, as used in billing.
+    @[JSON::Field(ignore: true)]
+    getter rounded_hours : Float64 = 0
     # Work hour goal for user.
     getter hours_goal : Float64
-    # Hours registered, rounded.
+    # Hours registered, rounded to two decimals.
     getter hours_registered : Float64 = 0
+    # Hours rounded to 15 minutes, as used in billing.
+    getter rounded_hours_registered : Float64 = 0
     @[JSON::Field(converter: Responses::OptionalConverter)]
     getter extra = Extra.new
     @[JSON::Field(converter: Responses::OptionalConverter)]
@@ -95,6 +100,7 @@ module Responses
     # behaviour.
     def round
       @hours_registered = @hours.round(2)
+      @rounded_hours_registered = @rounded_hours.round(2)
       @extra.round
       @admin.round
     end
@@ -110,6 +116,7 @@ module Responses
         @extra.off_hours += entry.hours
       else
         @hours += entry.hours
+        @rounded_hours += entry.rounded_hours
       end
 
       case task.name
@@ -132,6 +139,7 @@ module Responses
       if task.billable_by_default && project.is_billable &&
          task.name != "Off Hours - Driftsupport (ReOps)"
         @extra.billable_hours += entry.hours
+        @extra.billable_rounded_hours += entry.rounded_hours
       end
     end
   end
@@ -156,6 +164,7 @@ module Responses
     include Optional
 
     property billable_hours = 0_f64
+    property billable_rounded_hours = 0_f64
     property billability = Billability.new
     property holiday = 0_f64
     property time_off = TimeOff.new
@@ -170,6 +179,7 @@ module Responses
 
     def round
       @billable_hours = @billable_hours.round(2)
+      @billable_rounded_hours = @billable_rounded_hours.round(2)
       @billability.round
       @holiday = @holiday.round(2)
       @time_off.round
