@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ### Added
 - Syncing rounded hours.
-
+- Reprocess all time entries to add rounded hours.
 
 ## [1.0.1] - 2024-06-28
 

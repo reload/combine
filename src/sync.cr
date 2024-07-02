@@ -3,7 +3,7 @@ class Sync
 
   def initialize(@harvest : Harvest::Service) end
 
-  def run
+  def run(all : Bool = false)
     tasks = @harvest.tasks(updated_since: Task.last_updated_at)
     tasks.each do |harvest_task|
       begin
@@ -34,10 +34,10 @@ class Sync
     end
     Log.info { "Processed #{users.size} users"}
 
-    time_entries = @harvest.time_entries(updated_since: Entry.last_updated_at)
+    time_entries = @harvest.time_entries(updated_since: all ? nil : Entry.last_updated_at)
     time_entries.each do |harvest_entry|
       begin
-        entry = sync_entry harvest_entry
+        entry = sync_entry harvest_entry, all
       rescue ex
         Log.error { "Error syncing entry #{harvest_entry.inspect}"}
       end
@@ -86,10 +86,10 @@ class Sync
     user
   end
 
-  def sync_entry(harvest_entry : Harvest::TimeEntry) : Entry
+  def sync_entry(harvest_entry : Harvest::TimeEntry, force : Bool = false) : Entry
     entry = Entry.find harvest_entry.id
 
-    if !entry || entry.updated_at != harvest_entry.updated_at
+    if !entry || force || entry.updated_at != harvest_entry.updated_at
       data = {
         id: harvest_entry.id,
         user_id: harvest_entry.user.id,
