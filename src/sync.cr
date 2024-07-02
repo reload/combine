@@ -34,7 +34,6 @@ class Sync
     end
     Log.info { "Processed #{users.size} users"}
 
-    # TODO: Date range processing, with deletion.
     time_entries = @harvest.time_entries(updated_since: Entry.last_updated_at)
     time_entries.each do |harvest_entry|
       begin
