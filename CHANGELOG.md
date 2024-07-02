@@ -6,7 +6,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
 
-## 1.1.0 - [Unreleased]
+## 1.1.1 - [Unreleased]
+
+## [1.1.0] - 2024-07-02
 
 ### Added
 - Syncing rounded hours.
@@ -25,6 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - Initial version, with syncing, and the legacy endpoint.
 
 <!-- links -->
-[Unreleased]: https://github.com/reload/combine.git/compare/v1.0.1...HEAD
+[Unreleased]: https://github.com/reload/combine.git/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/reload/combine.git/compare/v1.0.1...v1.1.0
 [1.0.1]: https://github.com/reload/combine.git/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/reload/combine.git/releases/tag/v1.0.0
