@@ -97,6 +97,7 @@ class Sync
         task_id: harvest_entry.task.id,
         notes: harvest_entry.notes,
         hours: harvest_entry.hours,
+        rounded_hours: harvest_entry.rounded_hours,
         is_closed: harvest_entry.is_closed,
         is_billed: harvest_entry.is_billed,
         spent_at: harvest_entry.spent_date.to_s("%F"),

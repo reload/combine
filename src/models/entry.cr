@@ -11,6 +11,7 @@ class Entry < Granite::Base
   column id : Int64, primary: true, auto: false
   column notes : String
   column hours : Float64
+  column rounded_hours : Float64
   column is_closed : Bool
   column is_billed : Bool
   column spent_at : String
