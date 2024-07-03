@@ -93,6 +93,7 @@ class LegacyEntityController < Amber::Controller::Base
           "date_end" => date_to.to_s("%Y%m%d"),
           "hours_in_range" => ((users.map &.hours_goal).sum(0)).round(2),
           "hours_total_registered" => ((users.map &.hours).sum(0)).round(2),
+          "rounded_hours_total_registered" => ((users.map &.rounded_hours).sum(0)).round(2),
           "misc" => {
             "working_days_in_range" => work_days,
             "first_entry" => {

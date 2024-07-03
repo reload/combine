@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## 1.1.1 - [Unreleased]
 
+### Added
+- Rounded hours in totals.
+
 ## [1.1.0] - 2024-07-02
 
 ### Added
