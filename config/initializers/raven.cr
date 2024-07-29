@@ -7,7 +7,7 @@ require "raven/integrations/amber"
 module Raven
   class Context
     class_getter os_context : AnyHash::JSON do
-      if File.executable? "/bin/uname"
+      if File::Info.executable? "/bin/uname"
         {
           name:           Raven.sys_command("uname -s"),
           version:        Raven.sys_command("uname -v"),

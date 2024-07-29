@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## 1.1.3 - [Unreleased]
 
+### Fixed
+- Update to latest Crystal.
+
 ## [1.1.2] - 2024-07-29
 
 ### Fixed
