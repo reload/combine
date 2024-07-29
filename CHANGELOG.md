@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## 1.1.4 - [Unreleased]
 
+### Fixed
+- Pin Github action version of crystal to the same as the built image.
+
 ## [1.1.3] - 2024-07-29
 
 ### Fixed
