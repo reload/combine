@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## 1.1.5 - [Unreleased]
 
+### Fixed
+- Use fork of optarg for Crystal 1.13 compatibility.
+
 ## [1.1.4] - 2024-07-29
 
 ### Fixed

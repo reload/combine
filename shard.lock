@@ -1,3 +1,4 @@
+# NOTICE: This lockfile contains some overrides from shard.override.yml
 version: 2.0
 shards:
   amber:
@@ -104,9 +105,9 @@ shards:
     git: https://github.com/crystal-lang/crystal-mysql.git
     version: 0.14.0
 
-  optarg:
-    git: https://github.com/amberframework/optarg.git
-    version: 0.9.3
+  optarg: # Overridden
+    git: https://github.com/xendk/optarg.git
+    version: 0.9.3+git.commit.56b34d117458b67178f77523561813d16ccddaf8
 
   pg:
     git: https://github.com/will/crystal-pg.git

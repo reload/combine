@@ -1,0 +1,7 @@
+# This is a temporary measure to patch Crystal 1.13 compatibility into
+# optarg. This file can be removed when
+# https://github.com/amberframework/optarg/pull/6 is resolved.
+dependencies:
+  optarg:
+    github: xendk/optarg
+    branch: crystal-1.13
