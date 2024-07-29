@@ -11,6 +11,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ### Fixed
 - Swap from an to date in cleanup.
 
+### Added
+- Add logging to cleanup function.
+
 ## [1.1.1] - 2024-07-03
 
 ### Added

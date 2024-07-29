@@ -53,9 +53,13 @@ class Sync
       existing_entries.add(harvest_entry.id)
     end
 
+    deleted = 0
     Entry.spent_between(from, to).each do |entry|
       entry.destroy unless existing_entries.includes? entry.id!
+      deleted += 1
     end
+
+    Log.info { "Cleaned out #{deleted} deleted time entries"}
   end
 
   def sync_user(harvest_user = Harvest::User) : User
