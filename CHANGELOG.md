@@ -6,7 +6,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
 
-## 1.1.5 - [Unreleased]
+## 1.1.6 - [Unreleased]
+
+## [1.1.5] - 2024-07-29
 
 ### Fixed
 - Use fork of optarg for Crystal 1.13 compatibility.
@@ -53,7 +55,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - Initial version, with syncing, and the legacy endpoint.
 
 <!-- links -->
-[Unreleased]: https://github.com/reload/combine.git/compare/v1.1.4...HEAD
+[Unreleased]: https://github.com/reload/combine.git/compare/v1.1.5...HEAD
+[1.1.5]: https://github.com/reload/combine.git/compare/v1.1.4...v1.1.5
 [1.1.4]: https://github.com/reload/combine.git/compare/v1.1.3...v1.1.4
 [1.1.3]: https://github.com/reload/combine.git/compare/v1.1.2...v1.1.3
 [1.1.2]: https://github.com/reload/combine.git/compare/v1.1.1...v1.1.2
