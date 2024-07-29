@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## 1.1.2 - [Unreleased]
 
+### Fixed
+- Swap from an to date in cleanup.
+
 ## [1.1.1] - 2024-07-03
 
 ### Added

@@ -25,7 +25,7 @@ module Combine
   end
 
   def self.cleanup
-    @@sync.cleanup(Time.local, Time.local.shift(months: -2))
+    @@sync.cleanup(Time.local.shift(months: -2), Time.local)
   end
 
   # Run cron tasks in the master process.
