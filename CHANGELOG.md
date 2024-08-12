@@ -11,6 +11,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ### Added
 - Rounded versions of hours per day and same normalized.
 
+### Changed
+- Renamed `billable_rounded_hours` to `rounded_billable_hours`.
+  `billable_rounded_hours` kept around for compatibility for the
+  moment being.
+
 ## [1.1.5] - 2024-07-29
 
 ### Fixed

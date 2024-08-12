@@ -69,7 +69,7 @@ module Responses
         @extra.billability.of_total_hours = @extra.billable_hours / @hours * 100
 
         @extra.billability.hours_pr_day = @extra.billable_hours / work_days
-        @extra.billability.rounded_hours_pr_day = @extra.billable_rounded_hours / work_days
+        @extra.billability.rounded_hours_pr_day = @extra.rounded_billable_hours / work_days
 
         # Admin stuff.
         @admin.billability.goal =
@@ -88,7 +88,7 @@ module Responses
       if actual_work_days.positive?
         # Actual amount of billable hours per day.
         @extra.billability.hours_pr_day_normalized = @extra.billable_hours / actual_work_days
-        @extra.billability.rounded_hours_pr_day_normalized = @extra.billable_rounded_hours / actual_work_days
+        @extra.billability.rounded_hours_pr_day_normalized = @extra.rounded_billable_hours / actual_work_days
       end
 
       round
@@ -141,7 +141,7 @@ module Responses
       if task.billable_by_default && project.is_billable &&
          task.name != "Off Hours - Driftsupport (ReOps)"
         @extra.billable_hours += entry.hours
-        @extra.billable_rounded_hours += entry.rounded_hours
+        @extra.rounded_billable_hours += entry.rounded_hours
       end
     end
   end
@@ -166,6 +166,8 @@ module Responses
     include Optional
 
     property billable_hours = 0_f64
+    property rounded_billable_hours = 0_f64
+    # Brainfart, kept for compatibility for the moment being.
     property billable_rounded_hours = 0_f64
     property billability = Billability.new
     property holiday = 0_f64
@@ -181,7 +183,8 @@ module Responses
 
     def round
       @billable_hours = @billable_hours.round(2)
-      @billable_rounded_hours = @billable_rounded_hours.round(2)
+      @rounded_billable_hours = @rounded_billable_hours.round(2)
+      @billable_rounded_hours = @rounded_billable_hours
       @billability.round
       @holiday = @holiday.round(2)
       @time_off.round
