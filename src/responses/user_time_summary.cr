@@ -69,6 +69,7 @@ module Responses
         @extra.billability.of_total_hours = @extra.billable_hours / @hours * 100
 
         @extra.billability.hours_pr_day = @extra.billable_hours / work_days
+        @extra.billability.rounded_hours_pr_day = @extra.billable_rounded_hours / work_days
 
         # Admin stuff.
         @admin.billability.goal =
@@ -87,6 +88,7 @@ module Responses
       if actual_work_days.positive?
         # Actual amount of billable hours per day.
         @extra.billability.hours_pr_day_normalized = @extra.billable_hours / actual_work_days
+        @extra.billability.rounded_hours_pr_day_normalized = @extra.billable_rounded_hours / actual_work_days
       end
 
       round
@@ -198,7 +200,9 @@ module Responses
     property of_total_hours = 0_f64
     property of_working_hours = 0_f64
     property hours_pr_day = 0_f64
+    property rounded_hours_pr_day = 0_f64
     property hours_pr_day_normalized = 0_f64
+    property rounded_hours_pr_day_normalized = 0_f64
 
     def initialize() end
 
@@ -206,7 +210,9 @@ module Responses
       @of_total_hours = @of_total_hours.round(2)
       @of_working_hours = @of_working_hours.round(2)
       @hours_pr_day = @hours_pr_day.round(2)
+      @rounded_hours_pr_day = @rounded_hours_pr_day.round(2)
       @hours_pr_day_normalized = @hours_pr_day_normalized.round(2)
+      @rounded_hours_pr_day_normalized = @rounded_hours_pr_day_normalized.round(2)
     end
   end
 

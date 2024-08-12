@@ -6,7 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
 
-## 1.1.6 - [Unreleased]
+## 1.2.0 - [Unreleased]
+
+### Added
+- Rounded versions of hours per day and same normalized.
 
 ## [1.1.5] - 2024-07-29
 
