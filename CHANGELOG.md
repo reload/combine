@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## 1.2.1 - [Unreleased]
 
+### Fixed
+- Use optarg fork in Dockerfile.
+
 ## [1.2.0] - 2024-08-12
 
 ### Added

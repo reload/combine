@@ -4,7 +4,7 @@ WORKDIR /build
 # Add build dependencies.
 RUN apk add --no-cache sqlite-static yaml-static
 # Copying and install dependencies.
-COPY shard.yml shard.lock ./
+COPY shard.yml shard.override.yml shard.lock ./
 RUN shards install --production
 # Copy the rest of the code.
 COPY src/ src/
