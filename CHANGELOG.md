@@ -6,7 +6,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
 
-## 1.2.1 - [Unreleased]
+## 1.2.2 - [Unreleased]
+
+## [1.2.1] - 2024-08-12
 
 ### Fixed
 - Use optarg fork in Dockerfile.
@@ -68,7 +70,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - Initial version, with syncing, and the legacy endpoint.
 
 <!-- links -->
-[Unreleased]: https://github.com/reload/combine.git/compare/v1.2.0...HEAD
+[Unreleased]: https://github.com/reload/combine.git/compare/v1.2.1...HEAD
+[1.2.1]: https://github.com/reload/combine.git/compare/v1.2.0...v1.2.1
 [1.2.0]: https://github.com/reload/combine.git/compare/v1.1.5...v1.2.0
 [1.1.5]: https://github.com/reload/combine.git/compare/v1.1.4...v1.1.5
 [1.1.4]: https://github.com/reload/combine.git/compare/v1.1.3...v1.1.4
