@@ -134,7 +134,7 @@ module Responses
         @extra.illness.normal += entry.hours
       when "Barns første sygedag"
         @extra.illness.child += entry.hours
-      when "Uddannelse/Kursus"
+      when "Uddannelsesbudget + teamdage"
         @extra.education += entry.hours
       end
 
