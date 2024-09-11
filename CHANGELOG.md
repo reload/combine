@@ -6,7 +6,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/)
 and this project adheres to [Intended Effort Versioning](https://jacobtomlinson.dev/effver/).
 
 
-## 1.3.0 - [Unreleased]
+## 1.3.1 - [Unreleased]
+
+## [1.3.0] - 2024-09-11
 
 ### Removed
 - Removed `billable_rounded_hours`
@@ -78,7 +80,8 @@ and this project adheres to [Intended Effort Versioning](https://jacobtomlinson.
 - Initial version, with syncing, and the legacy endpoint.
 
 <!-- links -->
-[Unreleased]: https://github.com/reload/combine.git/compare/v1.2.2...HEAD
+[Unreleased]: https://github.com/reload/combine.git/compare/v1.3.0...HEAD
+[1.3.0]: https://github.com/reload/combine.git/compare/v1.2.2...v1.3.0
 [1.2.2]: https://github.com/reload/combine.git/compare/v1.2.1...v1.2.2
 [1.2.1]: https://github.com/reload/combine.git/compare/v1.2.0...v1.2.1
 [1.2.0]: https://github.com/reload/combine.git/compare/v1.1.5...v1.2.0
