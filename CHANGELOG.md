@@ -6,7 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/)
 and this project adheres to [Intended Effort Versioning](https://jacobtomlinson.dev/effver/).
 
 
-## 1.2.3 - [Unreleased]
+## 1.3.0 - [Unreleased]
+
+### Removed
+- Removed `billable_rounded_hours`
 
 ## [1.2.2] - 2024-09-10
 

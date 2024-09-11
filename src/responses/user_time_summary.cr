@@ -167,8 +167,6 @@ module Responses
 
     property billable_hours = 0_f64
     property rounded_billable_hours = 0_f64
-    # Brainfart, kept for compatibility for the moment being.
-    property billable_rounded_hours = 0_f64
     property billability = Billability.new
     property holiday = 0_f64
     property time_off = TimeOff.new
@@ -184,7 +182,6 @@ module Responses
     def round
       @billable_hours = @billable_hours.round(2)
       @rounded_billable_hours = @rounded_billable_hours.round(2)
-      @billable_rounded_hours = @rounded_billable_hours
       @billability.round
       @holiday = @holiday.round(2)
       @time_off.round
