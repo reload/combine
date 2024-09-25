@@ -8,6 +8,9 @@ and this project adheres to [Intended Effort Versioning](https://jacobtomlinson.
 
 ## 1.3.2 - [Unreleased]
 
+### Added
+- Email/password authentication for legacy endpoint.
+
 ### Fixed
 - Handle PHPs old BCrypt version.
 

@@ -6,6 +6,8 @@ class LegacyEntityController < Amber::Controller::Base
 
   def index
     token_user = nil : User?
+
+    # Legacy "token" authentication.
     if params[:token]?
       # Timelord uses a version of bcrypt hash that's basically only
       # used by PHP, so we "fix" it to the version Crystal BCrypt
@@ -29,6 +31,16 @@ class LegacyEntityController < Amber::Controller::Base
 
         # Contrary to the documented behaviour, halt! doesn't actually
         # break out early. Obviously a bug.
+        return
+      end
+    end
+
+    # Temporary email/password authentication.
+    if params[:password]? && params[:email]?
+      token_user = User.find_by!(email: params[:email])
+      unless token_user.authenticate(params[:password])
+        halt!(403, "Forbidden")
+
         return
       end
     end
