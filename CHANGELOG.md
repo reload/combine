@@ -8,6 +8,9 @@ and this project adheres to [Intended Effort Versioning](https://jacobtomlinson.
 
 ## 1.3.1 - [Unreleased]
 
+### Added
+- Allow admin to set password for users.
+
 ## [1.3.0] - 2024-09-11
 
 ### Removed

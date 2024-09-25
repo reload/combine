@@ -19,7 +19,14 @@ class UserController < ApplicationController
     user.working_hours = 0
     user.billability_goal = 0
 
-    user.set_attributes user_params.validate!.reject { |_, p| !p || p.blank? }
+    params = user_params.validate!.reject { |_, p| !p || p.blank? }
+
+    # Password isn't a regular column, so we have to set it explicitly.
+    if password = params["password"]?
+      user.password = password
+    end
+
+    user.set_attributes params
     if user.save
       redirect_to "/", flash: {"success" => "User has been updated."}
     else
@@ -32,6 +39,7 @@ class UserController < ApplicationController
     params.validation do
       optional(:working_hours) { |p| !!p.match(/^([0-9.]+)$/) }
       optional(:billability_goal) { |p| !!p.match(/^([0-9.]+)$/) }
+      optional(:password) { |p| !!p.presence}
     end
   end
 

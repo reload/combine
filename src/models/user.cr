@@ -45,6 +45,8 @@ class User < Granite::Base
     (bcrypt_pass = self.password) ? bcrypt_pass.verify(password) : false
   end
 
+  private getter new_password : String?
+
   # Override Granites created_at/updated_at handling.
   def set_timestamps(*, to time = Time.local(Granite.settings.default_timezone), mode = :create) end
 end

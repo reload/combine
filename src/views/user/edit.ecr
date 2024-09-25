@@ -33,6 +33,15 @@
   </div>
 
   <div class=form-element>
+    <label for=password>Password</label>
+    <%= text_field(
+        "password",
+        placeholder: "<don't change>",
+        ) %>
+    <small></small>
+  </div>
+
+  <div class=form-element>
     <%= submit("Update") %>
   </div>
 </form>
