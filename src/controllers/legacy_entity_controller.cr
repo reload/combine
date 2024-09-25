@@ -7,9 +7,21 @@ class LegacyEntityController < Amber::Controller::Base
   def index
     token_user = nil : User?
     if params[:token]?
-      token = params[:token].split("|")
+      # Timelord uses a version of bcrypt hash that's basically only
+      # used by PHP, so we "fix" it to the version Crystal BCrypt
+      # uses. This is hackery stuff, but using password hashes in auth
+      # was a bad move to start with, so we'll hack in compatibility
+      # until we get it fixed proper.
+      token = params[:token].gsub(/^\$2y\$/, "$2a$").split("|")
       if token.size == 2
         token_user = User.find_by(hashed_password: token[0], email: token[1])
+
+        unless token_user
+          # If we couldn't find a user by Crystal BCrypt hash, try
+          # again with PHP version, we have some migrated users with
+          # the old PHP version.
+          token_user = User.find_by(hashed_password: token[0].gsub(/^\$2a\$/, "$2y$"), email: token[1])
+        end
       end
 
       unless token_user
