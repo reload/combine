@@ -14,6 +14,7 @@ and this project adheres to [Intended Effort Versioning](https://jacobtomlinson.
 ### Changed
 - Invalid token creds results in 403 response, not an anonymous
   response.
+- Only admins can see the user list.
 
 ## [1.3.1] - 2024-09-25
 

@@ -1,2 +1,4 @@
 <li><a href="/" class="nav-link">Home</a></li>
+<% if context.current_user.try &.is_admin %>
 <li><a href="/user" class="nav-link">Users</a></li>
+<% end %>
