@@ -5,8 +5,6 @@ class LegacyEntityController < Amber::Controller::Base
   LAYOUT = "application.ecr"
 
   def index
-    # https://harvester.reload.dk/api/v1/entries.json?group=user&year=&month=&from=20240101&to=20240116&token=%242y%2410%244afbf69ace60a14b1e1deuFolZ6Mx5L5zVjX2Y.X3RYMzYW4a%2Fotu%7Charvest%40reload.dk
-
     token_user = nil : User?
     if params[:token]?
       token = params[:token].split("|")
