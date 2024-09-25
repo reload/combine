@@ -11,6 +11,14 @@ class LegacyEntityController < Amber::Controller::Base
       if token.size == 2
         token_user = User.find_by(hashed_password: token[0], email: token[1])
       end
+
+      unless token_user
+        halt!(403, "Forbidden")
+
+        # Contrary to the documented behaviour, halt! doesn't actually
+        # break out early. Obviously a bug.
+        return
+      end
     end
 
     location = Time::Location.load("Europe/Copenhagen")

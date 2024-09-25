@@ -8,6 +8,10 @@ and this project adheres to [Intended Effort Versioning](https://jacobtomlinson.
 
 ## 1.3.2 - [Unreleased]
 
+### Changed
+- Invalid token creds results in 403 response, not an anonymous
+  response.
+
 ## [1.3.1] - 2024-09-25
 
 ### Added
