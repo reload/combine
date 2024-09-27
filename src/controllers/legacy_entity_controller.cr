@@ -1,9 +1,4 @@
-require "jasper_helpers"
-
-class LegacyEntityController < Amber::Controller::Base
-  include JasperHelpers
-  LAYOUT = "application.ecr"
-
+class LegacyEntityController < ApplicationController
   def index
     token_user = nil : User?
 
