@@ -64,10 +64,12 @@ class LegacyEntityController < ApplicationController
       end
     end
 
-    # Go with last month if there's not enough workdays in the current
-    # one.
-    if date_from.to_s("%Y%m") == date_today.to_s("%Y%m") &&
-       calc_work_days(date_from, date_today.at_beginning_of_day) < 1
+    # Go with last month to is less than from (happens when it's the
+    # current month and it's the first of the month) or if there's not
+    # enough workdays in the current one.
+    if date_from > date_to
+      date_from.to_s("%Y%m") == date_today.to_s("%Y%m") &&
+        calc_work_days(date_from, date_today.at_beginning_of_day) < 1
       date_from = date_from.shift(months: -1)
       date_to = date_from.at_end_of_month
     end
