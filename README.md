@@ -25,6 +25,15 @@ the project you'll need the key from 1Password:
 
 `op read op://Shared/rasikyplntusmmbszukvobmjz4/password >.encryption_key`
 
+### Google Auth
+
+To create Google OAuth credentials for single signon, go to [Google
+Cloud Console](https://console.cloud.google.com) and create a project
+for the app. Visit "Credentials" in the "APIs & Services" product, and
+create an OAuth client ID. The `/signin/callback` URL of your Combine
+instance should be added to "Authorized redirect URIs", and the
+"People API" should be enabled for the project.
+
 ## Changelog
 
 The [changelog](CHANGELOG.md) records the latest changes.

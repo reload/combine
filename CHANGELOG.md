@@ -10,6 +10,7 @@ and this project adheres to [Intended Effort Versioning](https://jacobtomlinson.
 
 ### Added
 - Email/password authentication for legacy endpoint.
+- Log in using Google Single Signon.
 
 ### Fixed
 - Handle PHPs old BCrypt version.

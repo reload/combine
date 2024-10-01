@@ -50,6 +50,9 @@ dependencies:
   raven:
     github: Sija/raven.cr
 
+  multi_auth:
+    github: msa7/multi_auth
+
 development_dependencies:
   ameba:
     github: crystal-ameba/ameba

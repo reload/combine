@@ -101,6 +101,10 @@ shards:
     git: https://github.com/amberframework/micrate.git
     version: 0.15.1
 
+  multi_auth:
+    git: https://github.com/msa7/multi_auth.git
+    version: 1.1.1
+
   mysql:
     git: https://github.com/crystal-lang/crystal-mysql.git
     version: 0.14.0

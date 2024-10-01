@@ -42,6 +42,8 @@ Amber::Server.configure do
 
     get "/signin", SessionController, :new
     post "/session", SessionController, :create
+    get "/signin/google", SessionController, :google_signin
+    get "/signin/callback", SessionController, :google_callback
   end
 
   routes :auth do
