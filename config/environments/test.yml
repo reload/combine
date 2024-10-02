@@ -28,3 +28,5 @@ smtp:
 
 secrets:
   description: Store your development secrets credentials and settings here.
+  google_client_id: ""
+  google_client_secret: ""
