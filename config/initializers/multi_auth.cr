@@ -24,3 +24,11 @@ class HTTP::Client
     yield
   end
 end
+
+class Amber::Server
+  # Monkeypatch Amber::Server to always assume SSL. We're running
+  # behind Traefik in production.
+  def ssl_enabled?
+    true
+  end
+end
