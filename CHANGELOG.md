@@ -11,6 +11,7 @@ and this project adheres to [Intended Effort Versioning](https://jacobtomlinson.
 ### Added
 - Email/password authentication for legacy endpoint.
 - Log in using Google Single Signon.
+- Allow users to change password (stop-gap measure until Timelord can use Google auth).
 
 ### Fixed
 - Handle PHPs old BCrypt version.

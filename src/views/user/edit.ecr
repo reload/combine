@@ -12,6 +12,7 @@
   <%= csrf_tag %>
   <input type="hidden" name="_method" value="patch" />
 
+  <%- if context.current_user.try &.is_admin %>
   <div class=form-element>
     <label for=working_hours>Working hours</label>
     <%= text_field(
@@ -31,9 +32,10 @@
         ) %>
     <small>If not set, 75 percent is used per default.</small>
   </div>
+  <%- end %>
 
   <div class=form-element>
-    <label for=password>Password</label>
+    <label for=password>New password</label>
     <%= text_field(
         "password",
         placeholder: "<don't change>",

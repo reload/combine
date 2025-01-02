@@ -1,5 +1,7 @@
 <%- if (current_user = context.current_user) %>
-  <li><%= current_user.email %></li>
+  <li>
+    <%= link_to current_user.email, "/user/#{current_user.id}/edit" %>
+  </li>
   <li><a href="/signout">Sign Out</a></li>
 <%- else %>
   <li><a href="/signin">Sign In</a></li>

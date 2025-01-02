@@ -15,9 +15,11 @@ class UserController < ApplicationController
   end
 
   def update
-    # Set to zero per default.
-    user.working_hours = 0
-    user.billability_goal = 0
+    if context.current_user.try &.is_admin
+      # Set to zero per default.
+      user.working_hours = 0
+      user.billability_goal = 0
+    end
 
     params = user_params.validate!.reject { |_, p| !p || p.blank? }
 
@@ -37,8 +39,10 @@ class UserController < ApplicationController
 
   private def user_params
     params.validation do
-      optional(:working_hours) { |p| !!p.match(/^([0-9.]+)$/) }
-      optional(:billability_goal) { |p| !!p.match(/^([0-9.]+)$/) }
+      if context.current_user.try &.is_admin
+        optional(:working_hours) { |p| !!p.match(/^([0-9.]+)$/) }
+        optional(:billability_goal) { |p| !!p.match(/^([0-9.]+)$/) }
+      end
       optional(:password) { |p| !!p.presence}
     end
   end
