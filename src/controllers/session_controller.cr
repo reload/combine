@@ -59,6 +59,9 @@ class SessionController < ApplicationController
   end
 
   private def multi_auth
-    MultiAuth.make("google", "#{Amber::Server.instance.host_url.gsub(/0.0.0.0/, "localhost")}/signin/callback")
+    # Amber doesn't know that it's behind a Traefik with SSL in
+    # production, so it can't figure out the real hostname and schema.
+    base = Amber.env.production? ? "https://combine.reload.dk" : Amber::Server.instance.host_url.gsub(/0.0.0.0/, "localhost")
+    MultiAuth.make("google", "#{base}/signin/callback")
   end
 end
