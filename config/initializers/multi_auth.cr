@@ -24,3 +24,11 @@ class HTTP::Client
     yield
   end
 end
+
+class Amber::Server
+  # Monkeypatch Amber::Server to always make SSL links. We're running
+  # behind Traefik in production.
+  def scheme
+    ssl_enabled? ? "https" : "http"
+  end
+end
