@@ -16,6 +16,7 @@ and this project adheres to [Intended Effort Versioning](https://jacobtomlinson.
 ### Fixed
 - Handle PHPs old BCrypt version.
 - Show last month on the first of the month.
+- Fix counting of deleted entries.
 
 ### Changed
 - Invalid token creds results in 403 response, not an anonymous
