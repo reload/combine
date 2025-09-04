@@ -138,7 +138,7 @@ module Responses
         @extra.education += entry.hours
       end
 
-      if task.billable_by_default && project.is_billable &&
+      if entry.billable &&
          task.name != "Off Hours - Driftsupport (ReOps)"
         @extra.billable_hours += entry.hours
         @extra.rounded_billable_hours += entry.rounded_hours

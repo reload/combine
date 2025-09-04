@@ -11,6 +11,10 @@ and this project adheres to [Intended Effort Versioning](https://jacobtomlinson.
 ### Added
 - Add billable to entries.
 
+### Changed
+- Use `entry.billable` rather than `task.billable_by_default` and
+  `project.is_billable`.
+
 ## [1.4.0] - 2025-01-07
 
 ### Added
