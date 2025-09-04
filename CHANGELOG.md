@@ -8,6 +8,9 @@ and this project adheres to [Intended Effort Versioning](https://jacobtomlinson.
 
 ## 1.4.1 - [Unreleased]
 
+### Added
+- Add billable to entries.
+
 ## [1.4.0] - 2025-01-07
 
 ### Added

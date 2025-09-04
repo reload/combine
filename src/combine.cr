@@ -13,7 +13,9 @@ module Combine
     new_version = Micrate.dbversion(db)
 
     # Update all entries with rounded_hours.
-    if old_version < 20240702094302267 && new_version >= 20240702094302267
+    if (old_version < 20240702094302267 && new_version >= 20240702094302267) ||
+       # And with billable.
+       (old_version < 20250904161223531 && new_version >= 20250904161223531)
       spawn do
         @@sync.run(all: true)
       end

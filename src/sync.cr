@@ -108,6 +108,7 @@ class Sync
         is_billed: harvest_entry.is_billed,
         spent_at: harvest_entry.spent_date.to_s("%F"),
         timer_started_at: harvest_entry.timer_started_at,
+        billable: harvest_entry.billable,
         created_at: harvest_entry.created_at,
         updated_at: harvest_entry.updated_at,
       }

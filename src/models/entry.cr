@@ -16,6 +16,7 @@ class Entry < Granite::Base
   column is_billed : Bool
   column spent_at : String
   column timer_started_at : Time?
+  column billable : Bool
   column created_at : Time
   column updated_at : Time
 
