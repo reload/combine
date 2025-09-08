@@ -28,5 +28,7 @@ smtp:
 
 secrets:
   description: Store your development secrets credentials and settings here.
+  harvest_account_id: ""
+  harvest_token: ""
   google_client_id: ""
   google_client_secret: ""

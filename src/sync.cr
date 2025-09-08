@@ -1,3 +1,34 @@
+module Combine
+  @@sync : Sync?
+  @@syncing = false
+
+  # Are we currently syncing?
+  def self.syncing?
+    @@syncing
+  end
+
+  # Sync updates from Harvest.
+  def self.sync
+    @@syncing = true
+    @@sync.try &.run
+  ensure
+    @@syncing = false
+  end
+
+  # Resync all Harvest entries.
+  def self.resync
+    @@syncing = true
+    @@sync.try &.run(all: true)
+  ensure
+    @@syncing = false
+  end
+
+  # Clean out deleted entries.
+  def self.cleanup
+    @@sync.try &.cleanup(Time.local.shift(months: -2), Time.local)
+  end
+end
+
 class Sync
   Log = ::Log.for("sync")
 

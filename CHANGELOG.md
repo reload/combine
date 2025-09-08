@@ -8,6 +8,9 @@ and this project adheres to [Intended Effort Versioning](https://jacobtomlinson.
 
 ## 1.4.2 - [Unreleased]
 
+### Added
+- Sync button for admin users.
+
 ## [1.4.1] - 2025-09-04
 
 ### Added

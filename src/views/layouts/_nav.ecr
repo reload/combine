@@ -1,4 +1,9 @@
 <li><a href="/" class="nav-link">Home</a></li>
 <% if context.current_user.try &.is_admin %>
-<li><a href="/user" class="nav-link">Users</a></li>
+  <li><a href="/user" class="nav-link">Users</a></li>
+  <% if Combine.syncing? %>
+    <li>Sync: Running</li>
+  <% else %>
+    <li><a href="/sync" class="nav-link">Sync</a>: Idle</li>
+  <% end %>
 <% end %>

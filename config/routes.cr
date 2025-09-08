@@ -50,6 +50,8 @@ Amber::Server.configure do
     resources "/user", UserController, only: [:index, :edit, :update]
 
     get "/signout", SessionController, :delete
+
+    get "/sync", SyncController, :sync
   end
 
   routes :api do
