@@ -6,7 +6,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/)
 and this project adheres to [Intended Effort Versioning](https://jacobtomlinson.dev/effver/).
 
 
-## 1.4.3 - [Unreleased]
+## 1.4.4 - [Unreleased]
+
+## [1.4.3] - 2025-09-08
 
 ### Added
 - Forgotten files.
@@ -119,7 +121,8 @@ and this project adheres to [Intended Effort Versioning](https://jacobtomlinson.
 - Initial version, with syncing, and the legacy endpoint.
 
 <!-- links -->
-[Unreleased]: https://github.com/reload/combine.git/compare/v1.4.2...HEAD
+[Unreleased]: https://github.com/reload/combine.git/compare/v1.4.3...HEAD
+[1.4.3]: https://github.com/reload/combine.git/compare/v1.4.2...v1.4.3
 [1.4.2]: https://github.com/reload/combine.git/compare/v1.4.1...v1.4.2
 [1.4.1]: https://github.com/reload/combine.git/compare/v1.4.0...v1.4.1
 [1.4.0]: https://github.com/reload/combine.git/compare/v1.3.1...v1.4.0
