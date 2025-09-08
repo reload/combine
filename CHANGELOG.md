@@ -8,6 +8,9 @@ and this project adheres to [Intended Effort Versioning](https://jacobtomlinson.
 
 ## 1.4.3 - [Unreleased]
 
+### Added
+- Forgotten files.
+
 ## [1.4.2] - 2025-09-08
 
 ### Added
