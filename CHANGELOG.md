@@ -6,7 +6,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/)
 and this project adheres to [Intended Effort Versioning](https://jacobtomlinson.dev/effver/).
 
 
-## 1.4.2 - [Unreleased]
+## 1.4.3 - [Unreleased]
+
+## [1.4.2] - 2025-09-08
 
 ### Added
 - Sync button for admin users.
@@ -114,7 +116,8 @@ and this project adheres to [Intended Effort Versioning](https://jacobtomlinson.
 - Initial version, with syncing, and the legacy endpoint.
 
 <!-- links -->
-[Unreleased]: https://github.com/reload/combine.git/compare/v1.4.1...HEAD
+[Unreleased]: https://github.com/reload/combine.git/compare/v1.4.2...HEAD
+[1.4.2]: https://github.com/reload/combine.git/compare/v1.4.1...v1.4.2
 [1.4.1]: https://github.com/reload/combine.git/compare/v1.4.0...v1.4.1
 [1.4.0]: https://github.com/reload/combine.git/compare/v1.3.1...v1.4.0
 [1.3.1]: https://github.com/reload/combine.git/compare/v1.3.0...v1.3.1
