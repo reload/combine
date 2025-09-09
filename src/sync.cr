@@ -9,18 +9,30 @@ module Combine
 
   # Sync updates from Harvest.
   def self.sync
-    @@syncing = true
-    @@sync.try &.run
-  ensure
-    @@syncing = false
+    unless @@syncing
+      begin
+        @@syncing = true
+        @@sync.try &.run
+      rescue ex
+        Raven.capture ex
+      ensure
+        @@syncing = false
+      end
+    end
   end
 
   # Resync all Harvest entries.
   def self.resync
-    @@syncing = true
-    @@sync.try &.run(all: true)
-  ensure
-    @@syncing = false
+    unless @@syncing
+      begin
+        @@syncing = true
+        @@sync.try &.run(all: true)
+      rescue ex
+        Raven.capture ex
+      ensure
+        @@syncing = false
+      end
+    end
   end
 
   # Clean out deleted entries.

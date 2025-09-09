@@ -8,6 +8,9 @@ and this project adheres to [Intended Effort Versioning](https://jacobtomlinson.
 
 ## 1.4.4 - [Unreleased]
 
+### Fixed
+- Concurrency check and error logging in syncing fibers.
+
 ## [1.4.3] - 2025-09-08
 
 ### Added
