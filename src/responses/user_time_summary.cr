@@ -68,8 +68,10 @@ module Responses
 
         @extra.billability.of_total_hours = @extra.billable_hours / @hours * 100
 
-        @extra.billability.hours_pr_day = @extra.billable_hours / work_days
-        @extra.billability.rounded_hours_pr_day = @extra.rounded_billable_hours / work_days
+        if work_days.positive?
+          @extra.billability.hours_pr_day = @extra.billable_hours / work_days
+          @extra.billability.rounded_hours_pr_day = @extra.rounded_billable_hours / work_days
+        end
 
         # Admin stuff.
         @admin.billability.goal =

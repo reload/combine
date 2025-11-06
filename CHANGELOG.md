@@ -8,6 +8,9 @@ and this project adheres to [Intended Effort Versioning](https://jacobtomlinson.
 
 ## 1.4.5 - [Unreleased]
 
+### Fixed
+- Handle zero workdays.
+
 ## [1.4.4] - 2025-09-09
 
 ### Fixed
