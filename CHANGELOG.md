@@ -6,7 +6,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/)
 and this project adheres to [Intended Effort Versioning](https://jacobtomlinson.dev/effver/).
 
 
-## 1.4.6 - [Unreleased]
+## 1.4.7 - [Unreleased]
+
+## [1.4.6] - 2025-12-03
 
 ### Changed
 - Use block methods to process data while fetching for (hopefully)
@@ -136,7 +138,8 @@ and this project adheres to [Intended Effort Versioning](https://jacobtomlinson.
 - Initial version, with syncing, and the legacy endpoint.
 
 <!-- links -->
-[Unreleased]: https://github.com/reload/combine.git/compare/v1.4.5...HEAD
+[Unreleased]: https://github.com/reload/combine.git/compare/v1.4.6...HEAD
+[1.4.6]: https://github.com/reload/combine.git/compare/v1.4.5...v1.4.6
 [1.4.5]: https://github.com/reload/combine.git/compare/v1.4.4...v1.4.5
 [1.4.4]: https://github.com/reload/combine.git/compare/v1.4.3...v1.4.4
 [1.4.3]: https://github.com/reload/combine.git/compare/v1.4.2...v1.4.3
