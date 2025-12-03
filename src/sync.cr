@@ -47,52 +47,55 @@ class Sync
   def initialize(@harvest : Harvest::Service) end
 
   def run(all : Bool = false)
-    tasks = @harvest.tasks(updated_since: Task.last_updated_at)
-    tasks.each do |harvest_task|
+    task_count : Int32 = 0
+    Log.info { all ? "Running full sync" : "Running incremental sync"}
+    @harvest.tasks(updated_since: Task.last_updated_at) do |harvest_task|
       begin
         sync_task harvest_task
+        task_count += 1
       rescue ex
         Log.error { "Error syncing task #{harvest_task.inspect}"}
       end
     end
-    Log.info { "Processed #{tasks.size} tasks"}
 
-    projects = @harvest.projects(updated_since: Project.last_updated_at)
-    projects.each do |harvest_project|
+    project_count = 0
+    @harvest.projects(updated_since: Project.last_updated_at) do |harvest_project|
       begin
         sync_project harvest_project
+        project_count += 1
       rescue ex
         Log.error { "Error syncing project #{harvest_project.inspect}"}
       end
     end
-    Log.info { "Processed #{projects.size} projects"}
 
-    users = @harvest.users(updated_since: User.last_updated_at)
-    users.each do |harvest_user|
+    user_count = 0
+    @harvest.users(updated_since: User.last_updated_at) do |harvest_user|
       begin
         sync_user harvest_user
+        user_count += 1
       rescue ex
         Log.error { "Error syncing user #{harvest_user.inspect}"}
       end
     end
-    Log.info { "Processed #{users.size} users"}
 
-    time_entries = @harvest.time_entries(updated_since: all ? nil : Entry.last_updated_at)
-    time_entries.each do |harvest_entry|
+    entry_count = 0
+    @harvest.time_entries(updated_since: all ? nil : Entry.last_updated_at) do |harvest_entry|
       begin
         entry = sync_entry harvest_entry, all
+        entry_count += 1
       rescue ex
         Log.error { "Error syncing entry #{harvest_entry.inspect}"}
       end
     end
-    Log.info { "Processed #{time_entries.size} time entries"}
+
+    Log.info { "Processed #{user_count} user#{user_count == 1 ? "" : "s"}, #{project_count} project#{project_count == 1 ? "" : "s"}, #{task_count} task#{task_count == 1 ? "" : "s"}, and #{entry_count} time entr#{user_count == 1 ? "y" : "ies"}"}
   end
 
   # Clean out time entries deleted in Harvets
   def cleanup(from : Time, to : Time)
     existing_entries = Set(Int64).new
 
-    time_entries = @harvest.time_entries(from: from, to: to).each do |harvest_entry|
+    @harvest.time_entries(from: from, to: to) do |harvest_entry|
       existing_entries.add(harvest_entry.id)
     end
 
