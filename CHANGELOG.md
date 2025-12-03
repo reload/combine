@@ -8,6 +8,11 @@ and this project adheres to [Intended Effort Versioning](https://jacobtomlinson.
 
 ## 1.4.6 - [Unreleased]
 
+### Changed
+- Use block methods to process data while fetching for (hopefully)
+  less memory usage.
+- Aggregate synchronization log messages.
+
 ## [1.4.5] - 2025-11-06
 
 ### Fixed
