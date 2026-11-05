@@ -24,3 +24,23 @@ class HTTP::Client
     yield
   end
 end
+
+# Google omits "canonicalForm" from phone numbers it can't normalize to
+# E.164, which makes multi_auth's Google provider crash with
+# `Missing hash key: "canonicalForm"` during sign-in (still the case in
+# multi_auth 1.2.0). Fill it in from "value" before multi_auth reads it.
+class MultiAuth::Provider::Google
+  private def build_user(raw_json, access_token)
+    data = JSON.parse(raw_json)
+
+    if phones = data["phoneNumbers"]?.try(&.as_a?)
+      phones.each do |phone|
+        number = phone.as_h
+        number["canonicalForm"] ||= number["value"]? || JSON::Any.new("")
+      end
+      raw_json = data.to_json
+    end
+
+    previous_def(raw_json, access_token)
+  end
+end
